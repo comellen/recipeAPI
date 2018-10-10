@@ -7,45 +7,30 @@ const searchTerm = document.querySelector(".search");
 const searchForm = document.querySelector("form");
 const submitBtn = document.querySelector(".submit");
 
-// const hiFiber = document.querySelector("#hiFiber");
 const bal = document.querySelector("#bal");
 const hiProt = document.querySelector("#hiProt");
 const lowCarb = document.querySelector("#lowCarb");
 const lowFat = document.querySelector("#lowFat")
 
-// const dairyFree = document.querySelector("#dairyFree");
-// const glutFree = document.querySelector("#glutFree");
-// const noSugAdd = document.querySelector("#noSugAdd");  //low-sugar
-// const soyFree = document.querySelector("#soyFree");
 const noBooze = document.querySelector("#noBooze");
 const pnutFree = document.querySelector("#pnutFree");
 const tnutFree = document.querySelector("#tnutFree");
-const sugLow = document.querySelector("#sugLow");  //sugar-conscious
+const sugLow = document.querySelector("#sugLow");
 const vegan = document.querySelector("#vegan");
 const veg = document.querySelector("#veg");
 
 const omit = document.querySelector("#omit");
 
-
-const nextBtn = document.querySelector(".next");
-const previousBtn = document.querySelector(".prev");
-const nav = document.querySelector("nav");
-
 const section = document.querySelector("section");
 
-nav.style.display = "none";
-let pageNumber = 0;
 
 searchForm.addEventListener("submit", fetchResults);
-nextBtn.addEventListener("click", nextPage);
-previousBtn.addEventListener("click", previousPage);
 
 function fetchResults(e) {
-    if (pageNumber === 0) {
     e.preventDefault();
-    }
 
-    url = `${baseURL}?q=${searchTerm.value}&app_id=${appID}&app_key=${key}`;
+    url = `${baseURL}?q=${searchTerm.value}&app_id=${appID}&app_key=${key}&from=0&to=100`;
+
     if (bal.checked) {
         url += "&diet=balanced";
     }
@@ -58,7 +43,6 @@ function fetchResults(e) {
     if (lowFat.checked) {
         url += "&diet=low-fat";
     }
-
     if (noBooze.checked) {
         url += "&health=alcohol-free"
     }
@@ -77,18 +61,15 @@ function fetchResults(e) {
     if (veg.checked) {
         url += "&health=vegetarian";
     }
-
     if (omit.value !== "") {
         url += `&excluded=${omit.value}`
     }
 
     fetch(url)
         .then(function (result) {
-            // console.log(result);
             return result.json();
         })
         .then(function (json) {
-            // console.log(json);
             displayResults(json);
         })
 }
@@ -99,7 +80,6 @@ function displayResults(json) {
     }
 
     let recipes = json.hits;
-    console.log(recipes);
 
     if (recipes.length === 0) {
         console.log("No results");
@@ -113,6 +93,7 @@ function displayResults(json) {
             let heading = document.createElement("h3");
                 heading.setAttribute("id", "recipeName")
             let link = document.createElement("a");
+                link.setAttribute("id", "recipeLink")
             let img = document.createElement("img");
             let dLabel = document.createElement("p");
                 dLabel.setAttribute("id", "dietLabel");
@@ -120,11 +101,8 @@ function displayResults(json) {
                 hLabel.setAttribute("id", "healthLabel")
             let ingreds = document.createElement("p");
                 ingreds.setAttribute("id", "ingredients");
-            // let clearfix = document.createElement("div");
 
             let current = recipes[i];
-            // console.log("Current:", current);
-
 
             link.href = current.recipe.url;
             link.textContent = `${current.recipe.label} - ${current.recipe.source}`;
@@ -134,8 +112,8 @@ function displayResults(json) {
 
             for (let j = 0; j < current.recipe.ingredientLines.length; j++) {
                 let ilist = document.createElement("span");
-                if (current.recipe.ingredientLines.length == 0) {
-                    ilist.textContent = "None";
+                if (current.recipe.ingredientLines.length === 0) {
+                    ilist.textContent += "None";
                     ingreds.appendChild(ilist);
                 }
                 if (j == (current.recipe.ingredientLines.length - 1)) {
@@ -148,8 +126,8 @@ function displayResults(json) {
             }
             for (let d = 0; d < current.recipe.dietLabels.length; d++) {
                 let dlist = document.createElement("span");
-                if (current.recipe.dietLabels.length == 0) {
-                    dlist.textContent = "None";
+                if (current.recipe.dietLabels.length === 0) {
+                    dlist.textContent += "None";
                     dLabel.appendChild(dlist);
                 }
                 if (d == (current.recipe.dietLabels.length - 1)) {
@@ -162,8 +140,8 @@ function displayResults(json) {
             }
             for (let h = 0; h < current.recipe.healthLabels.length; h++) {
                 let hlist = document.createElement("span");
-                if (current.recipe.healthLabels.length == 0) {
-                    hlist.textContent = "None";
+                if (current.recipe.healthLabels.length === 0) {
+                    hlist.textContent += "None";
                     hLabel.appendChild(hlist);
                 }
                 if (h == (current.recipe.healthLabels.length - 1)) {
@@ -180,37 +158,14 @@ function displayResults(json) {
                 img.alt = current.recipe.label;
             }
 
-            // clearfix.setAttribute("class", "clearfix");
-
             recipe.appendChild(heading);
             recipe.appendChild(dLabel);
             recipe.appendChild(hLabel);
             heading.appendChild(link);
             recipe.appendChild(img);
             recipe.appendChild(ingreds);
-            // recipe.appendChild(clearfix);
             section.appendChild(recipe);
         }
     }
-
-    if (recipes.length != 0) {
-        nav.style.display = "block";
-    } else {
-        nav.style.display = "none";
-    }
 }
 
-function nextPage(e) {
-    pageNumber++;
-    fetchResults(e);
-}
-
-function previousPage() {
-    if (pageNumber > 0) {
-        pageNumber--;
-        fetchResults(e);
-    } else {
-        return;
-    }
-    fetchResults(e);
-}
