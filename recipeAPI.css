@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(247, 255, 241);
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: 100%;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+}
+.controls {
+    padding-left: 1em;
+}
+.results {
+}
+section {
+    display:grid;
+    overflow: auto;
+    grid-template-rows: 1fr;
+}
+section > #recipe  {
+    background: rgb(221, 229, 217);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+}
+section > #recipe:nth-child(odd) {
+    background: rgb(234, 242, 229);
+}
+#entry {
+    padding-bottom: 1em;
+}
+#diet {
+    padding-bottom: 1em;
+}
+#health {
+    padding-bottom: 1em;
+}
+#explain {
+    font-size: 80%;
+}
+#edamam-badge {
+    float: right;
+}
+h1 {
+    color: rgb(104, 178, 0);
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h3 {
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: lighter;
+}
+p {
+    font-size: 90%;
+    font-weight: lighter;
+}
+td {
+    font-size: 80%;
+    font-weight: lighter;
+    text-align: center;
+    font-style: italic;
+    vertical-align: middle;
+    width: 80px;
+}
+footer {
+    position:absolute;
+    bottom:0;
+    height:2em;
+}
+#icon {
+    opacity: 0.5;
+    padding-top: 25%;
+}
+
+
+#dietLabel {
+    font-style: italic;
+    font-size: 80%;
+}
+#healthLabel {
+    font-style: italic;
+    font-size: 80%;
+}
+#ingredients {
+    font-weight: normal;
+}
+#recipeName {
+    font-weight: normal;
+}
+#recipe {
+    justify-self: center;
+}

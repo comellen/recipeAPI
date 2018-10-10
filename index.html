@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="recipeAPI.css">
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="controls">
+            <form>
+                <h1>Specialized Recipe Search</h1>
+                <div id="entry">
+                    <h3>Enter a food or type of cuisine:</h3>
+                    <input type="text" id="search" class="search" required>
+                </div>
+                <div id="diet">
+                    <h3>Choose diet type(s):</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="bal" name="diet" value="bal">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="hiProt" name="diet" value="hiProt">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="lowCarb" name="diet" value="lowCarb">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="lowFat" name="diet" value="lowFat">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="bal">Balanced</label>
+                            </td>
+                            <td>
+                                <label for="hiProt">High protein</label>
+                            </td>
+                            <td>
+                                <label for="lowCarb">Low carb</label>
+                            </td>
+                            <td>
+                                <label for="lowFat">Low fat</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="health">
+                    <table>
+                        <h3>Choose health option(s):</h3>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="noBooze" name="health" value="noBooze">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="pnutFree" name="health" value="pnutFree">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="tnutFree" name="health" value="tnutFree">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="sugLow" name="health" value="sugLow">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="vegan" name="health" value="vegan">
+                            </td>
+                            <td>
+                                <input type="checkbox" id="veg" name="health" value="veg">
+                            </td>
+                        <tr>
+                            <td>
+                                <label for="noBooze">Alcohol free</label>
+                            </td>
+                            <td>
+                                <label for="pnutFree">Peanut free</label>
+                            </td>
+                            <td>
+                                <label for="tnutFree">Tree nut free</label>
+                            </td>
+                            <td>
+                                <label for="sugLow">Low sugar</label>
+                            </td>
+                            <td>
+                                <label for="vegan">Vegan</label>
+                            </td>
+                            <td>
+                                <label for="veg">Vegetarian</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3>Omit any foods or ingredients?</h3>
+                <p id="entry">
+                    <input type="text" id="omit" name="omit">
+                    <p id="explain">To omit multiple foods, separate with <i>&</i>.
+                        <br>
+                        <i>Example: </i>milk&honey <i>will omit recipes containing milk and/or honey from your results.</i></p>
+                </p>
+                <p>
+                    <button class="submit">Submit</button>
+                </p>
+                <nav>
+                    <button id="prev" class="prev">Previous 10</button>
+                    <button class="next">Next 10</button>
+                </nav>
+                <div id="edamam-badge" data-color="transparent"></div>
+            </form>
+        </div>
+        <div class="results">
+            <section>
+                <img src="./assets/687px-List_icon.svg.png" alt="fork and knife" id="icon">
+            </section>
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+    <script type="text/javascript" src="recipeAPI.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 -256 1850 1850"
+   id="svg3037"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   width="100%"
+   height="100%"
+   sodipodi:docname="food_font_awesome.svg">
+  <metadata
+     id="metadata3047">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3045" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview3043"
+     showgrid="false"
+     inkscape:zoom="0.13169643"
+     inkscape:cx="896"
+     inkscape:cy="896"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3037" />
+  <g
+     transform="matrix(1,0,0,-1,189.83051,1313.0508)"
+     id="g3039">
+    <path
+       d="M 640,1472 V 832 Q 640,771 604.5,721 569,671 512,651 v -779 q 0,-52 -38,-90 -38,-38 -90,-38 H 256 q -52,0 -90,38 -38,38 -38,90 V 651 Q 71,671 35.5,721 0,771 0,832 v 640 q 0,26 19,45 19,19 45,19 26,0 45,-19 19,-19 19,-45 v -416 q 0,-26 19,-45 19,-19 45,-19 26,0 45,19 19,19 19,45 v 416 q 0,26 19,45 19,19 45,19 26,0 45,-19 19,-19 19,-45 v -416 q 0,-26 19,-45 19,-19 45,-19 26,0 45,19 19,19 19,45 v 416 q 0,26 19,45 19,19 45,19 26,0 45,-19 19,-19 19,-45 z m 768,0 V -128 q 0,-52 -38,-90 -38,-38 -90,-38 h -128 q -52,0 -90,38 -38,38 -38,90 V 384 H 800 q -13,0 -22.5,9.5 Q 768,403 768,416 v 800 q 0,132 94,226 94,94 226,94 h 256 q 26,0 45,-19 19,-19 19,-45 z"
+       id="path3041"
+       inkscape:connector-curvature="0"
+       style="fill:currentColor" />
+  </g>
+</svg>
