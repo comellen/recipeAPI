@@ -3,7 +3,6 @@ body {
     padding: 0;
     background: rgb(247, 255, 241);
     font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
-
 }
 .wrapper {
     display: grid;
@@ -22,6 +21,12 @@ section {
     grid-template-rows: 1fr;
     height: 100vh;
 }
+section::-webkit-scrollbar {
+    width: 1em;
+}
+section::-webkit-scrollbar-thumb {
+    background-color: rgb(124, 124, 124);
+}
 section > #recipe  {
     background: rgb(221, 229, 217);
     box-sizing: border-box;
@@ -34,6 +39,7 @@ section > #recipe:nth-child(odd) {
 button {
     font-size: 110%;
     border-radius: 4px;
+    margin-top: 1em;
 }
 button:hover {
     color: white;
@@ -52,6 +58,9 @@ button:hover {
 #entry {
     padding-bottom: 1em;
 }
+#search, #omit {
+    margin-left: 1em;
+}
 #diet {
     padding-bottom: 1em;
 }
@@ -62,8 +71,9 @@ button:hover {
     font-size: 80%;
 }
 #edamam-badge {
-
-    float: right;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
 }
 h1 {
     color: rgb(104, 178, 0);

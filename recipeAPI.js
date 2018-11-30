@@ -71,6 +71,7 @@ function fetchResults(e) {
         })
         .then(function (json) {
             displayResults(json);
+            console.log(json);
         })
 }
 
@@ -85,7 +86,7 @@ function displayResults(json) {
         console.log("No results");
         let recipe = document.createElement("div");
         recipe.textContent = "No results.";
-        recipe.appendChild(recipe);
+        section.appendChild(recipe);
     } else {
         for (let i = 0; i < recipes.length; i++) {
             let recipe = document.createElement("div");
@@ -110,12 +111,12 @@ function displayResults(json) {
             dLabel.textContent = "Diet labels: ";
             hLabel.textContent = "Health labels: ";
 
+            if (current.recipe.ingredientLines.length === 0) {
+                ilist.textContent += "None";
+                ingreds.appendChild(ilist);
+            }
             for (let j = 0; j < current.recipe.ingredientLines.length; j++) {
                 let ilist = document.createElement("span");
-                if (current.recipe.ingredientLines.length === 0) {
-                    ilist.textContent += "None";
-                    ingreds.appendChild(ilist);
-                }
                 if (j == (current.recipe.ingredientLines.length - 1)) {
                     ilist.textContent += "and " + current.recipe.ingredientLines[j] + ".";
                     ingreds.appendChild(ilist);
@@ -124,12 +125,12 @@ function displayResults(json) {
                     ingreds.appendChild(ilist);
                 }
             }
+            if (current.recipe.dietLabels.length === 0) {
+                dlist.textContent += "None";
+                dLabel.appendChild(dlist);
+            }
             for (let d = 0; d < current.recipe.dietLabels.length; d++) {
                 let dlist = document.createElement("span");
-                if (current.recipe.dietLabels.length === 0) {
-                    dlist.textContent += "None";
-                    dLabel.appendChild(dlist);
-                }
                 if (d == (current.recipe.dietLabels.length - 1)) {
                     dlist.textContent += current.recipe.dietLabels[d];
                     dLabel.appendChild(dlist);
@@ -138,12 +139,12 @@ function displayResults(json) {
                     dLabel.appendChild(dlist);
                 }
             }
+            if (current.recipe.healthLabels.length === 0) {
+                hlist.textContent += "None";
+                hLabel.appendChild(hlist);
+            }
             for (let h = 0; h < current.recipe.healthLabels.length; h++) {
                 let hlist = document.createElement("span");
-                if (current.recipe.healthLabels.length === 0) {
-                    hlist.textContent += "None";
-                    hLabel.appendChild(hlist);
-                }
                 if (h == (current.recipe.healthLabels.length - 1)) {
                     hlist.textContent += current.recipe.healthLabels[h];
                     hLabel.appendChild(hlist);

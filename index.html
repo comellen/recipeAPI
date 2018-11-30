@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper">
         <div class="controls">
-            <form>
+            <form id="form">
                 <h1>Specialized Recipe Search</h1>
                 <div id="entry">
                     <h3>Enter a food or type of cuisine:</h3>
@@ -98,7 +98,7 @@
                     </table>
                 </div>
                 <h3>Omit any foods or ingredients?</h3>
-                <p id="entry">
+                <p>
                     <input type="text" id="omit" name="omit">
                     <p id="explain">To omit multiple foods, separate with <i>&</i>.
                         <br>
@@ -106,9 +106,9 @@
                 </p>
                 <p>
                     <button class="submit">Submit</button>
-                </p>    
-                <div id="edamam-badge" data-color="transparent"></div>
+                </p>
             </form>
+            <div id="edamam-badge" data-color="transparent"></div>
         </div>
         <div class="results">
             <section>
