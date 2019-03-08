@@ -1,3 +1,1 @@
-# Specialized Recipe Search
-
-## Deployed on Firebase here:  https://recipe-api-proj.firebaseapp.com/
+# Specialized Recipe Search deployed on Firebase here:  https://recipe-api-proj.firebaseapp.com/
